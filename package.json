@@ -10,6 +10,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@builder.io/dev-tools": "^1.2.0",
+    "@builder.io/react": "^7.0.1",
+    "@builder.io/sdk": "^5.0.0",
     "@chakra-ui/react": "^3.2.3",
     "@emotion/react": "^11.13.5",
     "next-themes": "^0.4.4",

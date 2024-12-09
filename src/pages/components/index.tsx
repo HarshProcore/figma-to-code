@@ -1,19 +1,20 @@
+import { FaGoogle } from "@/components/custom/Icons";
+import { InputField } from "@/components/custom/InputField";
 import { Button } from "@/components/ui/button";
-import { Field } from "@/components/ui/field";
-import { AppInput } from "@/components/ui/input";
 import { AppLink } from "@/components/ui/link";
 import { Switch } from "@/components/ui/switch";
-import React from "react";
+import { IconButton } from "@chakra-ui/react";
 
 function AppComponents() {
   return (
     <>
       <Button>Awesome</Button>
-      <Field label="Email">
-        <AppInput placeholder="me@example.com"></AppInput>
-      </Field>
+      <InputField label="Name" placeholder="Enter your name" />
       <Switch>Is Cool</Switch>
       <AppLink href="...">Awesome</AppLink>
+      <IconButton>
+        <FaGoogle />
+      </IconButton>
     </>
   );
 }
