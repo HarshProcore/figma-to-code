@@ -1,8 +1,8 @@
 import "./App.css";
-import { AppCard } from "./components/auth/components/AppCard";
+import { AppCard } from "./components/custom/AppCard";
 
 function App() {
-  return <AppCard>Hello</AppCard>;
+  return <AppCard>Harsh</AppCard>;
 }
 
 export default App;
