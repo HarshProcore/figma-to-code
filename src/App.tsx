@@ -1,11 +1,8 @@
-import './App.css'
-import { SignInScreen } from './components/auth/SignInScreen'
+import "./App.css";
+import { AppCard } from "./components/auth/components/AppCard";
 
 function App() {
-
-  return (
-   <SignInScreen />
-  )
+  return <AppCard>Hello</AppCard>;
 }
 
-export default App
+export default App;
