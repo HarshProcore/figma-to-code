@@ -2,6 +2,7 @@ import { Builder } from "@builder.io/react";
 import { AppCard } from "./components/custom/AppCard";
 import { Button } from "./components/ui/button";
 import { InputField } from "./components/auth/components/InputField";
+import { SocialIconButton } from "./components/socialButtons/SocialIconButton";
 import { Switch } from "./components/ui/switch";
 
 Builder.registerComponent(Button, {
@@ -90,6 +91,21 @@ Builder.registerComponent(Switch, {
       meta: {
         ts: "{ on: any; off: any; }",
       },
+    },
+  ],
+});
+
+Builder.registerComponent(SocialIconButton, {
+  name: "SocialIconButton",
+  inputs: [
+    {
+      name: "className",
+      type: "string",
+    },
+    {
+      name: "iconName",
+      type: "string",
+      required: true,
     },
   ],
 });

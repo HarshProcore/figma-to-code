@@ -6,6 +6,7 @@ import { FaClock } from "react-icons/fa";
 interface AppIconButtonProps {
   label?: string;
   iconName: string;
+  className?: string;
 }
 
 function AppIconButton(props: AppIconButtonProps) {
@@ -14,14 +15,14 @@ function AppIconButton(props: AppIconButtonProps) {
 
   if (!props.label) {
     return (
-      <IconButton aria-label={props.iconName}>
+      <IconButton className={props.className} aria-label={props.iconName}>
         <Icon />
       </IconButton>
     );
   }
 
   return (
-    <Button aria-label={props.label}>
+    <Button aria-label={props.label} className={props.className}>
       <Icon />
       {props.label}
     </Button>

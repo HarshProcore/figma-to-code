@@ -10,6 +10,6 @@ interface FigmaSwitchProps extends BaseFigmaProps {
 figmaMapping({
   componentKey: "7bd38bd7b992a30e8f09992b7d7f49446628ca6a",
   mapper(figma: FigmaSwitchProps) {
-    return <Switch label={figma.Label} />;
+    return <Switch>{figma.Label} </Switch>;
   },
 });

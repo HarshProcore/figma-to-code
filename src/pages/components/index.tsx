@@ -1,5 +1,6 @@
 import { FaGoogle } from "@/components/custom/Icons";
 import { InputField } from "@/components/custom/InputField";
+import { SocialIconButton } from "@/components/socialButtons/SocialIconButton";
 import { Button } from "@/components/ui/button";
 import { AppLink } from "@/components/ui/link";
 import { Switch } from "@/components/ui/switch";
@@ -15,6 +16,7 @@ function AppComponents() {
       <IconButton>
         <FaGoogle />
       </IconButton>
+      <SocialIconButton iconName="google" />
     </>
   );
 }
