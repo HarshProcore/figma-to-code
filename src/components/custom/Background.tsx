@@ -13,6 +13,7 @@ const ContentWrapper = styled.div`
   z-index: 1;
   height: 100%;
   width: 100%;
+  position: relative;
 `;
 
 interface BackgroundProps {
