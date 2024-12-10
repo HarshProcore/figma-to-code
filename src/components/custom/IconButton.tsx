@@ -1,5 +1,5 @@
 import { iconMap } from "@/utils/iconMap";
-import { IconButton } from "@chakra-ui/react";
+import { IconButton as IButton } from "@chakra-ui/react";
 import { Button } from "../ui/button";
 import { FaClock } from "react-icons/fa";
 
@@ -9,15 +9,15 @@ interface AppIconButtonProps {
   className?: string;
 }
 
-function AppIconButton(props: AppIconButtonProps) {
+function IconButton(props: AppIconButtonProps) {
   // @ts-expect-error iconName should be valid
-  const Icon = iconMap[props.iconName] || FaClock;
+  const Icon = iconMap[props.iconName.toLowerCase()] || FaClock;
 
   if (!props.label) {
     return (
-      <IconButton className={props.className} aria-label={props.iconName}>
+      <IButton className={props.className} aria-label={props.iconName}>
         <Icon />
-      </IconButton>
+      </IButton>
     );
   }
 
@@ -29,4 +29,4 @@ function AppIconButton(props: AppIconButtonProps) {
   );
 }
 
-export { AppIconButton };
+export { IconButton };

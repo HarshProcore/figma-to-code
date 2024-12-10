@@ -5,14 +5,14 @@ import {
   FaGoogle,
   FaKey,
   FaUser,
-  FaUserAlt,
+  FaUserCircle,
 } from "react-icons/fa";
 
 const iconMap = {
-  cube: FaCube,
-  user: FaUser,
-  person: FaUserAlt,
-  key: FaKey,
+  dashboard: FaCube,
+  profile: FaUser,
+  "sign up": FaUserCircle,
+  "sign in": FaKey,
   facebook: FaFacebook,
   apple: FaApple,
   google: FaGoogle,

@@ -1,6 +1,6 @@
 import * as React from "react";
 import styled from "styled-components";
-import { AppIconButton } from "@/components/custom/IconButton";
+import { IconButton } from "@/components/custom/IconButton";
 
 interface SocialIconButtonProps {
   iconName: string;
@@ -14,7 +14,7 @@ export const SocialIconButton: React.FC<SocialIconButtonProps> = ({
   return <StyledIconButton iconName={iconName} className={className} />;
 };
 
-const StyledIconButton = styled(AppIconButton)`
+const StyledIconButton = styled(IconButton)`
   height: 74px;
   width: 74px;
   background-color: white;
