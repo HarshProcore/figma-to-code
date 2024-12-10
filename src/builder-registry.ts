@@ -1,6 +1,8 @@
 import { Builder } from "@builder.io/react";
 import { AppCard } from "./components/custom/AppCard";
+import { Background } from "./components/custom/Background";
 import { Button } from "./components/ui/button";
+import { ColoredBg } from "./components/custom/ColoredBg";
 import { InputField } from "./components/auth/components/InputField";
 import { SocialIconButton } from "./components/socialButtons/SocialIconButton";
 import { Switch } from "./components/ui/switch";
@@ -106,6 +108,24 @@ Builder.registerComponent(SocialIconButton, {
       name: "iconName",
       type: "string",
       required: true,
+    },
+  ],
+});
+
+Builder.registerComponent(ColoredBg, {
+  name: "ColoredBg",
+});
+
+Builder.registerComponent(Background, {
+  name: "Background",
+  inputs: [
+    {
+      name: "children",
+      type: "string",
+      hideFromUI: true,
+      meta: {
+        ts: "ReactNode",
+      },
     },
   ],
 });
