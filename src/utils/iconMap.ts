@@ -6,6 +6,7 @@ import {
   FaKey,
   FaUser,
   FaUserCircle,
+  FaUsers,
 } from "react-icons/fa";
 
 const iconMap = {
@@ -16,6 +17,7 @@ const iconMap = {
   facebook: FaFacebook,
   apple: FaApple,
   google: FaGoogle,
+  logo: FaUsers,
 };
 
 export { iconMap };
