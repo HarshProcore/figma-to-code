@@ -1,12 +1,10 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import { SignInScreen } from "./components/auth_chakra/SignInScreen";
+import "./App.css";
+import { ShipmentTable } from "./components/shipments/ShipmentTable";
 
 function App() {
   return (
     <div className="App">
-      <SignInScreen />
+      <ShipmentTable data={[]}></ShipmentTable>
     </div>
   );
 }
