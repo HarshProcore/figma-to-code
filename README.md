@@ -1,4 +1,66 @@
-# React + TypeScript + Vite
+# Figma To Code
+This project demonstrates code generation from Figma designs using Builder.io. The process begins by mapping the Figma designs to our Helix components, ensuring that each design element corresponds to the appropriate component in the design system. Once the mapping is complete, we can generate the code based on the mapped components, aligning it with the Helix design specifications. This workflow streamlines the design-to-development process, allowing for seamless integration between design and code, ensuring consistency and accuracy across the project while reducing manual effort during the code generation phase.
+
+## Project Structure
+1. The main component illustrates the mapping of components to Chakra UI.
+2. The Procore folder showcases the mapping of the Data Table component using Helix components.
+
+## Create new Component Mapping
+1. Install the builder.io/dev-tool
+```js
+npm i @builder.io/dev-tools@latest --save
+```
+2. In Figma, select the component to map.
+3. Open the Builder Figma Plugin and go to the Design System tab.
+4. The Design tab displays unmapped components along with a CLI command that maps all components listed. Copy the command by clicking on the copy icon.
+```js
+npx builder.io@latest figma generate 9ca66...
+```
+5. When you are prompted, select the local component you want to map. If you have a lot of components, filter for a particular component by starting to type its name.6. In the prompt that opens in Figma, grant access to the Builder CLI by clicking the Allow access button.
+6. Inspect the suggested mapper function and request any changes. For example, "Provide a better default value for the subtitle". Press Enter for Devtools to generate another mapper function with your recommendations.
+7.  When you are satisfied with the suggestion, respond to the prompt question of "How does the mapping look?" with "good".
+8.  At the prompt for where to save the new mappings, specify the location you'd like.
+9.  Open your new mapper file and edit your mapper() function if needed.
+    
+    We are mapping our Helix components to Figma designs to ensure seamless integration with Builder.io. For example, we map the @procore/core-react Button component to the corresponding button in our Figma designs. 
+```js
+import { figmaMapping, type BaseFigmaProps } from "@builder.io/dev-tools/figma";
+import { Button } from "@procore/core-react";
+import { ButtonVariant } from "@procore/core-react/dist/Button/Button.types";
+
+interface FigmaCustomButtonProps extends BaseFigmaProps {
+  variant?: string;
+}
+
+figmaMapping({
+  componentKey: "a195f34c7d00609fb46322a05056278c6290bce0",
+  mapper(figma: FigmaCustomButtonProps) {
+    const buttonVariant = figma.variant as ButtonVariant;
+    return <Button variant={buttonVariant}>{figma.$children}</Button>;
+  },
+});
+```
+10.  Repeat for all components.
+
+
+## Importing Figma Designs to Builder
+1. In your Figma file, select the frame(s) you'd like to import into Builder.
+2. In Figma, open the Builder plugin by clicking on Resources in the toolbar and going to the Plugins tab.
+3. Click the Generate Code button.
+4. This workflow launches a Builder fiddle with your content, which you can copy and paste into another Builder document or save as a template.
+5. In Builder fiddle select develop tab, Click Generate Code but to start generating.
+6. After the code generation is complete, click the "Sync Code" button to execute the synchronization command.
+  ```js
+  npx builder.io@latest add e35116ee
+  ```
+7. Run this command in your root folder of your project. This will create required file in Components folder.
+
+
+
+---
+# Project SetUp
+
+## React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
