@@ -48,3 +48,23 @@ export default tseslint.config({
   },
 })
 ```
+
+## Component Mapping
+We are mapping our Helix components to Figma designs to ensure seamless integration with Builder.io. For example, we map the @procore/core-react Button component to the corresponding button in our Figma designs. This mapping ensures that when the design is imported into Builder.io, the correct component is used in the generated code. By establishing these mappings, we ensure that the design system components are accurately represented in both the design phase and the final code, streamlining the workflow between design and development while maintaining consistency across the project.
+```js
+import { figmaMapping, type BaseFigmaProps } from "@builder.io/dev-tools/figma";
+import { Button } from "@procore/core-react";
+import { ButtonVariant } from "@procore/core-react/dist/Button/Button.types";
+
+interface FigmaCustomButtonProps extends BaseFigmaProps {
+  variant?: string;
+}
+
+figmaMapping({
+  componentKey: "a195f34c7d00609fb46322a05056278c6290bce0",
+  mapper(figma: FigmaCustomButtonProps) {
+    const buttonVariant = figma.variant as ButtonVariant;
+    return <Button variant={buttonVariant}>{figma.$children}</Button>;
+  },
+});
+```
