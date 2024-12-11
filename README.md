@@ -87,4 +87,16 @@ figmaMapping({
 10.  Repeat for all components.
 
 
+## Importing Figma Designs to Builder
+1. In your Figma file, select the frame(s) you'd like to import into Builder.
+2. In Figma, open the Builder plugin by clicking on Resources in the toolbar and going to the Plugins tab.
+3. Click the Generate Code button.
+4. This workflow launches a Builder fiddle with your content, which you can copy and paste into another Builder document or save as a template.
+5. In Builder fiddle select develop tab, Click Generate Code but to start generating.
+6. After the code generation is complete, click the "Sync Code" button to execute the synchronization command.
+  ```js
+  npx builder.io@latest add e35116ee
+  ```
+7. Run this command in your root folder of your project. This will create required file in Components folder.
+
 
