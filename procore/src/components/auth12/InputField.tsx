@@ -5,16 +5,16 @@ import { InputFieldProps } from "./types";
 
 export const InputField: React.FC<InputFieldProps> = ({
   label,
-  placeholder,
-  type = "text",
   id,
+  type = "text",
+  placeholder,
 }) => {
   return (
     <InputWrapper>
-      <Label htmlFor={id}>{label}</Label>
+      <InputLabel htmlFor={id}>{label}</InputLabel>
       <StyledInput
-        type={type}
         id={id}
+        type={type}
         placeholder={placeholder}
         aria-label={label}
       />
@@ -25,21 +25,17 @@ export const InputField: React.FC<InputFieldProps> = ({
 const InputWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  width: 100%;
+  margin: 24px 0;
 `;
 
-const Label = styled.label`
+const InputLabel = styled.label`
   color: var(--Gray-Gray-700, #2d3748);
   font: 400 14px/1.4 Helvetica, sans-serif;
-  @media (max-width: 991px) {
-    margin-left: 8px;
-  }
+  margin-bottom: 15px;
 `;
 
 const StyledInput = styled(Input)`
   min-height: 50px;
-  width: 100%;
   @media (max-width: 991px) {
     max-width: 100%;
   }

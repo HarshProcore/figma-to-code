@@ -1,12 +1,12 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { LoginPage } from './components/auth/LoginPage';
+import { AuthPage } from "./components/auth/AuthPage";
 
 function App() {
   return (
     <div className="App">
-      <LoginPage />
+      <AuthPage />
     </div>
   );
 }

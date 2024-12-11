@@ -14,18 +14,18 @@ export const AuthButton: React.FC<AuthButtonProps> = ({ children }) => {
 };
 
 const StyledButton = styled(Button)`
-  align-self: stretch;
   margin-top: 36px;
   min-height: 45px;
+  width: 100%;
 `;
 
 const ButtonContent = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  min-height: 24px;
 `;
 
-const ButtonText = styled.span`
-  font: 700 14px/1.4 Helvetica, sans-serif;
+const ButtonText = styled.div`
+  text-align: center;
 `;
