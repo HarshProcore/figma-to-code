@@ -84,7 +84,7 @@ figmaMapping({
   },
 });
 ```
-11.  Repeat for all components.
+10.  Repeat for all components.
 
 
 
