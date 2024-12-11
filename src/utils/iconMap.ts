@@ -12,8 +12,8 @@ import {
 const iconMap = {
   dashboard: FaCube,
   profile: FaUser,
-  "sign up": FaUserCircle,
-  "sign in": FaKey,
+  signup: FaUserCircle,
+  signin: FaKey,
   facebook: FaFacebook,
   apple: FaApple,
   google: FaGoogle,
