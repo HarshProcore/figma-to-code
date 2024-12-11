@@ -1,12 +1,12 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { AuthPage } from "./components/auth/AuthPage";
+import { SignInScreen } from "./components/auth14/SignInScreen";
 
 function App() {
   return (
     <div className="App">
-      <AuthPage />
+      <SignInScreen />
     </div>
   );
 }
