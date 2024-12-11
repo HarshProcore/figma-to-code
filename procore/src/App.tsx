@@ -1,12 +1,12 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { Button } from '@procore/core-react';
+import { SignInScreen } from "./components/auth_chakra/SignInScreen";
 
 function App() {
   return (
     <div className="App">
-      <Button>hello</Button>
+      <SignInScreen />
     </div>
   );
 }
