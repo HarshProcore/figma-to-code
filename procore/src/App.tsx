@@ -1,12 +1,12 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { Button } from '@procore/core-react';
+import { LoginPage } from './components/auth/LoginPage';
 
 function App() {
   return (
     <div className="App">
-      <Button>hello</Button>
+      <LoginPage />
     </div>
   );
 }
