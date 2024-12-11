@@ -12,7 +12,7 @@ interface DatatableProps {
   // colDefs: ColumnDefinition[];
   children?: React.ReactNode[] | React.ReactNode;
   // onServerSideDataRequest?: (params: ServerSideGetRowsParams) => Promise<void>;
-  fetchRows: (params: ServerSideGetRowsParams) => Promise<SuccessParams>;
+  fetchRows?: (params: ServerSideGetRowsParams) => Promise<SuccessParams>;
 }
 
 export function Datatable(props: DatatableProps) {
@@ -28,7 +28,17 @@ export function Datatable(props: DatatableProps) {
     }) || [];
 
   const onServerSideDataRequest = async (params: ServerSideGetRowsParams) => {
-    const { rowCount, rowData } = await props.fetchRows(params);
+    let fetchRows = props.fetchRows;
+    if (!fetchRows) {
+      fetchRows = async () => {
+        return {
+          rowData: [],
+          rowCount: 0,
+        };
+      };
+    }
+
+    const { rowCount, rowData } = await fetchRows(params);
     params.onSuccess({
       rowCount,
       rowData,

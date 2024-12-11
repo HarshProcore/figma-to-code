@@ -1,5 +1,12 @@
-module.exports = function override(config, env) {
+// const { aliasWebpack } = require("react-app-alias");
+const { alias, configPaths } = require("react-app-rewire-alias");
+
+function override(config, env) {
   // New config, e.g. config.plugins.push...
+
+  alias({
+    ...configPaths("tsconfig.json"),
+  })(config);
 
   config.module.rules = [
     ...config.module.rules,
@@ -12,4 +19,6 @@ module.exports = function override(config, env) {
   ];
 
   return config;
-};
+}
+
+module.exports = override;
