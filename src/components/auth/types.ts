@@ -1,5 +1,5 @@
 export interface SocialButtonProps {
-  iconName: string;
+  iconName?: string;
   onClick?: () => void;
 }
 
