@@ -1,19 +1,15 @@
-export interface NavItemProps {
-  icon: string;
-  text: string;
-}
-
-export interface ButtonProps {
-  children: React.ReactNode;
-  variant?: "primary" | "secondary";
+export interface SocialButtonProps {
+  iconName?: string;
   onClick?: () => void;
 }
 
-export interface InputFieldProps {
-  label: string;
-  placeholder: string;
-  type: string;
-  id: string;
-  value: string;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+export interface AuthFormProps {
+  onSubmit: (data: AuthFormData) => void;
+}
+
+export interface AuthFormData {
+  name: string;
+  email: string;
+  password: string;
+  rememberMe: boolean;
 }
